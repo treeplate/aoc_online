@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/widget_previews.dart';
 
 class Day1 extends StatefulWidget {
@@ -19,11 +20,11 @@ class _Day1State extends State<Day1> with SingleTickerProviderStateMixin {
   double speed = .1;
   int part1 = 0;
   int part2 = 0;
-
+  late final Ticker ticker;
   @override
   void initState() {
     super.initState();
-    createTicker((_) {
+    ticker = createTicker((_) {
       setState(() {
         if ((value - goal).abs() < speed.abs()) {
           value = goal;
@@ -52,7 +53,13 @@ class _Day1State extends State<Day1> with SingleTickerProviderStateMixin {
           }
         }
       });
-    }).start();
+    })..start();
+  }
+
+  @override
+  void dispose() {
+    ticker.dispose();
+    super.dispose();
   }
 
   @override
