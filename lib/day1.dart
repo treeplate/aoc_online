@@ -35,10 +35,11 @@ class _Day1State extends State<Day1> with SingleTickerProviderStateMixin {
           }
           speed = 0;
         } else {
-          int oldValue = value.round()+1;
+          int oldValue = value.round() + 1;
           value += speed;
           if (speed.abs() < 1) {
-            if (value % 100 < speed.abs() && (value - goal).abs() > speed.abs()) {
+            if (value % 100 < speed.abs() &&
+                (value - goal).abs() > speed.abs()) {
               part2++;
             }
           } else {
@@ -58,18 +59,22 @@ class _Day1State extends State<Day1> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextField(
-          onSubmitted: (value) {
-            int num = int.parse(value.substring(1));
-            if (value.startsWith('R')) {
-              goal += num.toDouble();
-              speed = num / 100;
-            }
-            if (value.startsWith('L')) {
-              goal -= num.toDouble();
-              speed = -num / 100;
-            }
-          },
+        SizedBox(
+          width: 200,
+          child: TextField(
+            onSubmitted: (value) {
+              int num = int.parse(value.substring(1));
+              if (value.startsWith('R')) {
+                goal += num.toDouble();
+                speed = num / 100;
+              }
+              if (value.startsWith('L')) {
+                goal -= num.toDouble();
+                speed = -num / 100;
+              }
+            },
+            decoration: InputDecoration(border: OutlineInputBorder()),
+          ),
         ),
         Expanded(
           child: Row(
