@@ -1,17 +1,12 @@
 # aoc_online
 
-A new Flutter project.
+A simulator for [Advent of Code](https://adventofcode.com/2025) days 1-4.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Day 1
+Put 'R' or 'L' followed by a number in the textfield, then press enter
+## Day 2
+Put a range in the textfield, then press enter
+## Day 3
+Put the sequence of batteries in the textfield, then press enter
+## Day 4
+Click to put a toilet paper roll down in the grey area, and press the checkbox to run the forklifts.
