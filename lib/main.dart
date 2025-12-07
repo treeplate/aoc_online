@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 
+import 'day1.dart';
+import 'day2.dart';
+import 'day3.dart';
+import 'day4.dart';
+import 'day5.dart';
+import 'day6.dart';
+import 'day7.dart';
+
 void main() {
   runApp(App());
-  main();
 }
 
 class App extends StatefulWidget {
@@ -14,15 +21,18 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> {
-  TextEditingController controller = TextEditingController();
-  TextEditingController c2 = TextEditingController();
+class _AppState extends State<App> with SingleTickerProviderStateMixin {
+  late final TabController tabController = TabController(
+    length: 7,
+    vsync: this,
+  );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: TabBar(
+          controller: tabController,
           tabs: [
             Tab(text: 'Day 1'),
             Tab(text: 'Day 2'),
@@ -34,7 +44,8 @@ class _AppState extends State<App> {
           ],
         ),
         body: TabBarView(
-          //children: [Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7()],
+          controller: tabController,
+          children: [Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7()],
         ),
       ),
     );
