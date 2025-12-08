@@ -1,6 +1,6 @@
 # aoc_online
 
-A simulator for [Advent of Code](https://adventofcode.com/2025) days 1-4.
+A simulator for [Advent of Code](https://adventofcode.com/2025) days 1-4. First look at the respective days on that site.
 
 ## Day 1
 Put 'R' or 'L' followed by a number in the textfield, then press enter
